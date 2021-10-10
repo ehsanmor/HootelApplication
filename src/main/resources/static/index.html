@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "navbar") {
+                x.className += " responsive";
+            } else {
+                x.className = "navbar";
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/login_css.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container head-banner">
+        <div class="welcome">
+            <div class="row">
+                <img class="col" id="resortLogo" src="images/molvenoLogo.jpg" alt="logo" />
+                <img class="col" id="resort" src="images/resort.jpg" alt="photo" />
+            </div>
+            <div class="container navbarUser">
+                <span id="loggedInUserName"></span>
+            </div>
+            <div class="navbar" id="myTopnav">
+                <a href="#" onclick="includeBody('home')">Home</a>
+                <div class="subnav" id="mnuRoom" hidden>
+                    <button class="subnavbtn" onclick="includeBody('rooms')">Rooms </button>
+                </div>
+                <div class="subnav" id="mnuReservation" hidden>
+                    <button class="subnavbtn" onclick="includeBody('reservations')">Reservations </button>
+                </div>
+                <div class="subnav" id="mnuGuest" hidden>
+                    <button class="subnavbtn" onclick="includeBody('guests')">Guests </button>
+                </div>
+                <div class="subnav" id="mnuEmployee" hidden>
+                    <button class="subnavbtn" onclick="includeBody('employees')">Employees </button>
+                </div>
+                <div class="subnav" id="mnuMaintain" hidden>
+                    <button class="subnavbtn">Maintain <i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content">
+                        <a href="#" id="mnuTypeList" onclick="includeBody('typeList')">Lists</a>
+                        <a href="#" id="mnuUserRole" onclick="includeBody('Userroles')">User Roles</a>
+                    </div>
+                </div>
+                <div class="subnav" id="mnuReport" hidden>
+                    <button class="subnavbtn" onclick="includeBody('report')">Report </button>
+                </div>
+                <a href="#" id="btnLogin" class="login-btn" onclick="LoginLogoutClicked()">
+                    Login
+                </a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="bodyContent">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

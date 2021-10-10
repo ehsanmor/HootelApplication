@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/report.js"></script>
+</head>
+
+<body>
+    <fieldset>
+        <h3><u>Reservations Report</u></h3>
+        <div class="form-group">
+            <label for="startDateReport">From date:</label>
+            <i class="fa fa-calendar inline"></i>
+            <input type="text" class="datePicker form-control" id='startDateReport' name="startDate" required>
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="endDateReport">To date:</label>
+            <i class="fa fa-calendar inline"></i>
+            <input type='text' class="datePicker form-control inline" id='endDateReport' name="endDate" required/>
+        </div>
+        <button type="button" name="btnOpenReport" id="btnOpenReport" class="btn btn-success">Show report</button>
+        <div class="table-responsive">
+            <table id="reservationsReportTable" class="table table-striped table-bordered compact" style="width:100%">
+
+            </table>
+        </div>
+    </fieldset>
+</body>
+
+</html>

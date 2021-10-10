@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/rooms.js"></script>
+    <script type="text/javascript" src="js/getRoom.js"></script>
+</head>
+
+<body>
+    <fieldset>
+        <h3>List of Rooms</h3>
+        <button type="button" name="addNewRoom" id="addNewRoom" data-toggle="modal" data-target="#edit_room_modal" class="btn btn-success">Add New</button>
+        <div class="table-responsive">
+            <table id="roomTable" class="table table-striped table-bordered" style="width:100%">
+
+            </table>
+        </div>
+    </fieldset>
+
+    <!-- Editing form modal -->
+    <div id="edit_room_modal" class="modal fade" hidden>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Room details</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <form id="update_form">
+                        <div>
+                            <label class="error-msg" style="color:red;"></label>
+                        </div>
+                        <div class="row">
+                            <div class="col sm-6">
+                                <div class="form-group">
+                                    <label for="roomId">Room No</label><br>
+                                    <input id="roomId" name="roomId" type="text" required>
+                                    <input id="Id" name="Id" type="hidden">
+                                </div>
+
+                                <label>Room type</label><br>
+                                <div class="form-group" id="roomTypesList">
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="roomSize">Room max Capacity:</label><br>
+                                    <input id="roomSize" name="roomSize" type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="roomPrice">Room price:</label><br>
+                                    <input id="roomPrice" name="roomPrice" type="text" required>
+                                </div>
+                            </div>
+                            <div class="col sm-6">
+                                <label>Facilities</label><br>
+                                <div class="form-group" id="facilityTypesList">
+                                </div>
+                                <input id="roomFacilities" name="roomFacilities" type="hidden" />
+
+                                <div class="form-group">
+                                    <label for="roomUnderConstruction">Is room under construction?</label>
+                                    <select class="form-control" id="roomUnderConstruction" name="roomUnderConstruction" class="required">
+                                        <option>Select....</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false" selected>No</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="roomLastBigClean">Last Big Clean date on:</label>
+                                    <i class="fa fa-calendar inline"></i>
+                                    <input type='text' class="datePicker form-control inline" id='roomLastBigClean' name="roomLastBigClean" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="roomBigCleanAfterInDays">Number of Days After Big Clean:</label>
+                                    <input type='text' class="form-control inline" id='roomBigCleanAfterInDays' name="numberOfDaysAfterBigClean" required/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <label id="messageLabel"></label>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <input type="submit" name="updateRoom" id="updateRoom" value="Update" class="btn btn-success" />
+                            <button type="button" name="saveNewRoom" id="saveNewRoom" class="btn btn-success" hidden>Save</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- .modal-body -->
+            </div>
+            <!-- .modal-content -->
+        </div>
+        <!-- .modal-dialog -->
+    </div>
+    <!-- .modal -->
+
+</body>
+
+</html>
